@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BeatBuddy - Music Quality Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- 3D Background Elements -->
+        <div class="bg-circles">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+            <div class="circle circle-4"></div>
+        </div>
+
+        <!-- Header -->
+        <header class="header">
+            <h1 class="logo">BeatBuddy</h1>
+            <p class="tagline">Advanced Music Quality Analyzer</p>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Upload Section -->
+            <section class="upload-section">
+                <div class="upload-container">
+                    <div class="upload-box" id="uploadBox">
+                        <div class="upload-icon">🎵</div>
+                        <h3>Drop your music file here</h3>
+                        <p>Supports MP3, WAV, FLAC, and more</p>
+                        <input type="file" id="fileInput" accept="audio/*" hidden>
+                        <button class="upload-btn" onclick="document.getElementById('fileInput').click()">
+                            Choose File
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Analysis Section -->
+            <section class="analysis-section" id="analysisSection" style="display: none;">
+                <div class="analysis-container">
+                    <h2>Music Analysis</h2>
+                    
+                    <!-- Waveform Visualization -->
+                    <div class="waveform-container">
+                        <canvas id="waveformCanvas" width="800" height="200"></canvas>
+                    </div>
+
+                    <!-- Quality Metrics -->
+                    <div class="metrics-grid">
+                        <div class="metric-card">
+                            <h3>Overall Quality</h3>
+                            <div class="rating" id="overallRating">
+                                <div class="stars"></div>
+                                <span class="score">0/10</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <h3>Clarity</h3>
+                            <div class="progress-bar">
+                                <div class="progress" id="clarityProgress"></div>
+                                <span class="percentage" id="clarityScore">0%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <h3>Bass Quality</h3>
+                            <div class="progress-bar">
+                                <div class="progress" id="bassProgress"></div>
+                                <span class="percentage" id="bassScore">0%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <h3>Treble Quality</h3>
+                            <div class="progress-bar">
+                                <div class="progress" id="trebleProgress"></div>
+                                <span class="percentage" id="trebleScore">0%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <h3>Dynamic Range</h3>
+                            <div class="progress-bar">
+                                <div class="progress" id="dynamicProgress"></div>
+                                <span class="percentage" id="dynamicScore">0%</span>
+                            </div>
+                        </div>
+                        
+                        <div class="metric-card">
+                            <h3>Bitrate</h3>
+                            <div class="info-display" id="bitrateInfo">0 kbps</div>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Results -->
+                    <div class="results-container">
+                        <h3>Analysis Results</h3>
+                        <div class="results-text" id="resultsText">
+                            Upload a music file to begin analysis...
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- The Majestica Face -->
+        <footer class="footer">
+            <div class="majestica-face">
+                <div class="face-container">
+                    <div class="face">
+                        <div class="eyes">
+                            <div class="eye left-eye"></div>
+                            <div class="eye right-eye"></div>
+                        </div>
+                        <div class="mouth"></div>
+                    </div>
+                    <p class="creator-text">Created by The Majestica</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
